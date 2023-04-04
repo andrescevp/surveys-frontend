@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "base";
+@layer components {
+  .form-control-label {
+    @apply block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-200
+  }
+
+  .form-input {
+    @apply darkeable-white appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-400 overflow-ellipsis focus:border-primary-500 focus:dark:bg-gray-600
+  }
+
+  .form-input-document {
+    @apply darkeable-white appearance-none block w-full bg-gray-200 text-gray-700 border-b border-gray-200 py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white border-gray-400 overflow-ellipsis focus:border-primary-500 focus:dark:bg-gray-600
+  }
+}

@@ -1,0 +1,30 @@
+<?xml version = "1.0" encoding = "UTF-8" standalone = "no" ?>
+<!DOCTYPE questionnaire SYSTEM "questionnaire.dtd">
+<questionnaire code="q1">
+    <title>My questionnaire</title>
+    <set code="s1">
+        <choice>
+            <option code="q_5" value="1">A simple number question</option>
+        </choice>
+        <set code="s2">
+            <choice>
+                <option code="q_7" value="1">A simple number question</option>
+            </choice>
+        </set>
+        <text>
+            <question code="q_90">A simple text question</question>
+        </text>
+    </set>
+    <text>
+        <question code="q_1" value="1">A simple text question</question>
+    </text>
+    <choice>
+        <option code="q_3"  value="1">A simple choice question</option>
+        <option code="q_4"  value="1">A simple choice question</option>
+    </choice>
+    <break_page/>
+    <number>
+        <question code="q_2" value="1">A simple number question</question>
+    </number>
+    <break_page/>
+</questionnaire>

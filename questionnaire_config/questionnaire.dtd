@@ -1,0 +1,80 @@
+<!-- questionnaire root -->
+<!ELEMENT questionnaire ((title|set|text|choice|number|break_page)*)>
+<!ATTLIST questionnaire status (development | running | stop) "development">
+<!ATTLIST questionnaire code ID #REQUIRED>
+
+<!ELEMENT title (#PCDATA)>
+<!ATTLIST title alt CDATA #IMPLIED>
+
+<!-- flow control elements -->
+<!-- sets of elements -->
+<!ELEMENT set ((text|choice|number|break_page|set|iteration)*)>
+<!ATTLIST set code ID #REQUIRED>
+<!-- iterations - loops -->
+<!ELEMENT iterate (#PCDATA)>
+<!ATTLIST iterate code ID #REQUIRED>
+<!ATTLIST iterate alt_code ID #REQUIRED>
+<!ATTLIST iterate value CDATA #REQUIRED>
+
+<!ELEMENT iteration ((text|choice|number|break_page|set|iteration)*)>
+<!ATTLIST iteration code ID #REQUIRED>
+<!ATTLIST iteration alt_code CDATA #IMPLIED>
+<!-- break pages - pauses -->
+<!ELEMENT break_page EMPTY>
+
+<!-- element types types -->
+<!ELEMENT text (question+,column*)>
+<!ELEMENT number (question+,column*)>
+<!ELEMENT choice (option+,column*)>
+
+<!-- element types types attr one by one -->
+<!-- text  -->
+<!ATTLIST text widget CDATA "default">
+<!ATTLIST text required (1|0) "0">
+<!ATTLIST text randomize_questions (1|0) "0">
+<!ATTLIST text randomize_columns (1|0) "0">
+<!ATTLIST text randomize_by_group (1|0) "0">
+<!ATTLIST text max CDATA "255">
+<!ATTLIST text min CDATA "3">
+<!-- number -->
+<!ATTLIST number widget CDATA "default">
+<!ATTLIST number required (1|0) "0">
+<!ATTLIST number randomize_questions (1|0) "0">
+<!ATTLIST number randomize_columns (1|0) "0">
+<!ATTLIST number randomize_by_group (1|0) "0">
+<!ATTLIST number max CDATA "255">
+<!ATTLIST number min CDATA "3">
+<!-- choice -->
+<!ATTLIST choice widget CDATA "default">
+<!ATTLIST choice required (1|0) "0">
+<!ATTLIST choice randomize_questions (1|0) "0">
+<!ATTLIST choice randomize_columns (1|0) "0">
+<!ATTLIST choice randomize_by_group (1|0) "0">
+<!ATTLIST choice multi (1|0) "0">
+<!ATTLIST choice minimal_choices_selection CDATA #IMPLIED>
+<!ATTLIST choice maximal_choices_selection CDATA #IMPLIED>
+<!ATTLIST choice fixed_choices_selection CDATA #IMPLIED>
+
+
+<!-- element childs, question, columns... -->
+<!-- questions -->
+<!ELEMENT question (#PCDATA)>
+<!ATTLIST question code ID #REQUIRED>
+<!ATTLIST question value CDATA #IMPLIED>
+<!ATTLIST question alt_code CDATA #IMPLIED>
+<!ATTLIST question group_code CDATA #IMPLIED>
+<!ATTLIST question group_label CDATA #IMPLIED>
+<!-- option choices -->
+<!ELEMENT option (#PCDATA)>
+<!ATTLIST option code ID #REQUIRED>
+<!ATTLIST option value CDATA #REQUIRED>
+<!ATTLIST option alt_code CDATA #IMPLIED>
+<!ATTLIST option group_code CDATA #IMPLIED>
+<!ATTLIST option group_label CDATA #IMPLIED>
+<!-- columns -->
+<!ELEMENT column (#PCDATA)>
+<!ATTLIST column code ID #REQUIRED>
+<!ATTLIST column value CDATA #REQUIRED>
+<!ATTLIST column alt_code CDATA #IMPLIED>
+<!ATTLIST column group_code CDATA #IMPLIED>
+<!ATTLIST column group_label CDATA #IMPLIED>

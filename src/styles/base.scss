@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .darkeable {
+    @apply bg-gray-200 dark:bg-gray-800 transition-colors duration-300 text-gray-800 dark:text-gray-200
+  }
+
+  .darkeable-light {
+    @apply bg-gray-100 dark:bg-gray-700 transition-colors duration-300 text-gray-800 dark:text-gray-200
+  }
+
+  .darkeable-white {
+    @apply bg-white dark:bg-gray-800 transition-colors duration-300 text-gray-800 dark:text-gray-200
+  }
+
+  .text-default {
+    @apply text-gray-800 dark:text-gray-200;
+  }
+
+  .bg-default {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  .btn-default {
+    @apply text-gray-800 dark:text-gray-200 dark:bg-gray-800 hover:text-gray-100 shadow-lg transition-all duration-300 p-2 hover:bg-gray-600 rounded dark:border-solid dark:border-white dark:border-1 border-1 border-solid border-gray-400;
+    cursor: pointer;
+  }
+
+  .btn-breadcrumb {
+    @apply text-gray-800 dark:text-gray-200 dark:bg-gray-800 transition-all duration-300 px-2 border-b-2 border-transparent hover:border-b-2 hover:border-gray-800 border-0 shadow-none inline-flex items-center text-sm font-medium;
+    cursor: pointer;
+  }
+
+  .btn-group {
+    cursor: pointer;
+
+    > button:first-child {
+      @apply btn-default rounded-none rounded-l-lg
+    }
+
+    > button {
+      @apply btn-default rounded-none border-l-0 border-r-0 w-full
+    }
+
+    > button:last-child {
+      @apply btn-default rounded-none rounded-r-lg
+    }
+  }
+
+  .btn-sidebar-dashboard {
+    @apply flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700
+  }
+
+  .btn-navbar {
+    @apply text-gray-800 dark:text-gray-200 shadow hover:text-primary-500 transition-all duration-300 p-4 hover:bg-primary-900 rounded mx-2 ;
+    cursor: pointer;
+  }
+
+  .btn-red {
+    @apply bg-red-500 hover:bg-red-800 text-gray-100
+  }
+
+
+  .card {
+    @apply block p-2 md:p-6 rounded border-1 border-gray-300 darkeable-white shadow-lg
+  }
+
+  .accordion li > div {
+    display: none;
+  }
+
+  .accordion .flipY {
+    transform: rotate3d(1, 0, 0, 180deg);
+  }
+
+  .accordion svg {
+    transition: all 1s cubic-bezier(0, .5, 0, 1);
+  }
+}
+
+//datatable
+.rdt_Table {
+  @apply darkeable rounded border-1
+}
+
+.rdt_TableHeader {
+  @apply darkeable-light rounded border-1 mb-2
+}
+
+.rdt_TableCol {
+  @apply darkeable-light
+}
+
+.rdt_TableRow {
+  @apply darkeable-light
+}
+
+// router transitions
+.fade-enter {
+  opacity: 0;
+  transform: translate(0, 25px);
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+
+.fade-exit {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transform: translate(0, 30px);
+
+  transition: opacity 250ms ease-out, transform 300ms ease;
+}
+
+// loader
+
+.gear0 {
+  stroke: black;
+  stroke-width: 1;
+  transform-origin: 33.47285199% 32.89218482%;
+  animation-duration: 3s;
+  fill: var(--tw-gradient-from)
+}
+
+.gear1 {
+  stroke: black;
+  stroke-width: 1;
+  transform-origin: 74.01464945% 74.46662863%;
+  animation-duration: 4s;
+  animation-direction: reverse;
+  fill: var(--tw-gradient-from);
+}
+
+.gear2 {
+  stroke: black;
+  stroke-width: 1;
+  transform-origin: 78.02581095% 16.12093553%;
+  animation-duration: 3.5s;
+  animation-direction: reverse;
+  fill: var(--tw-gradient-from);
+}
+
+
+

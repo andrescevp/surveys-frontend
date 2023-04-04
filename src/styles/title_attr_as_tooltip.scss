@@ -1,0 +1,46 @@
+/* Add tooltip styling to the button */
+.tooltip {
+  position: relative;
+}
+
+/* Style the tooltip text */
+.tooltip::before,
+.tooltip::after {
+  content: '';
+  display: none;
+  position: absolute;
+}
+
+.tooltip:hover::before,
+.tooltip:hover::after {
+  display: block;
+}
+
+/* Style the tooltip arrow */
+.tooltip::after {
+  border-color: transparent;
+  border-width: 6px;
+  border-style: solid;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Style the tooltip content */
+.tooltip::before {
+  background-color: #333;
+  border-radius: 4px;
+  color: #fff;
+  content: attr(title);
+  font-size: 0.75rem;
+  line-height: 1.2;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 9999;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}

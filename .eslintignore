@@ -1,0 +1,4 @@
+src/theme.js
+src/styles/*
+src/*.scss
+src/*.svg
